@@ -1,0 +1,37 @@
+{
+  "name": "@simupro/industrial-suite",
+  "version": "1.0.0",
+  "description": "Enterprise Process Simulation Suite for Automotive Manufacturing",
+  "private": true,
+  "workspaces": [
+    "api-gateway",
+    "core-integration",
+    "web-portal",
+    "sdk/*",
+    "monitoring",
+    "analytics"
+  ],
+  "scripts": {
+    "install:all": "npm install && npm run bootstrap",
+    "bootstrap": "lerna bootstrap",
+    "build": "lerna run build",
+    "start:dev": "docker-compose up -d && npm run start:services",
+    "start:services": "concurrently \"npm run start:gateway\" \"npm run start:portal\" \"npm run start:core\"",
+    "start:gateway": "cd api-gateway && npm start",
+    "start:portal": "cd web-portal && npm start",
+    "start:core": "cd core-integration && npm start",
+    "test": "lerna run test",
+    "deploy:k8s": "kubectl apply -f kubernetes/",
+    "generate:docs": "node scripts/generate-docs.js"
+  },
+  "devDependencies": {
+    "lerna": "^7.4.2",
+    "concurrently": "^8.2.2",
+    "@types/node": "^20.10.0",
+    "typescript": "^5.3.3"
+  },
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  }
+}
