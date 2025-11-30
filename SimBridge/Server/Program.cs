@@ -33,7 +33,10 @@ namespace SimBridge.Server
 
         public SimBridgeImpl()
         {
-#if !MOCK
+#if MOCK
+            Console.WriteLine("Running in MOCK mode (DLLs not found at build time).");
+            _useMock = true;
+#else
             try
             {
                 // Attempt to access a Tecnomatix type to trigger assembly load
@@ -45,9 +48,6 @@ namespace SimBridge.Server
                 Console.WriteLine($"Tecnomatix API not available: {ex.Message}. Switching to Mock Mode.");
                 _useMock = true;
             }
-#else
-            Console.WriteLine("Running in MOCK mode (DLLs not found at build time).");
-            _useMock = true;
 #endif
         }
 

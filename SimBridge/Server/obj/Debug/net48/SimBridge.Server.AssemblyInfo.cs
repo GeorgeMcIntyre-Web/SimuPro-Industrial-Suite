@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SimBridge.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8263b983a46cd85fc7c031e228f92077d9556a56")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+3949e2eee6681a08fe4fdd943818ba20718421db")]
 [assembly: System.Reflection.AssemblyProductAttribute("SimBridge.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SimBridge.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
