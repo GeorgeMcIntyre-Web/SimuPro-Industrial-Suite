@@ -1,0 +1,17 @@
+﻿  Determining projects to restore...
+  All projects are up-to-date for restore.
+C:\Program Files\dotnet\sdk\8.0.403\Microsoft.Common.CurrentVersion.targets(2412,5): warning MSB3245: Could not resolve this reference. Could not locate the assembly "Tecnomatix.Engineering". Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors. [C:\Users\George\source\repos\SimuPro-Industrial-Suite\SimBridge\Server\SimBridge.Server.csproj]
+C:\Program Files\dotnet\sdk\8.0.403\Microsoft.Common.CurrentVersion.targets(2412,5): warning MSB3245: Could not resolve this reference. Could not locate the assembly "Tecnomatix.Engineering.Ui". Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors. [C:\Users\George\source\repos\SimuPro-Industrial-Suite\SimBridge\Server\SimBridge.Server.csproj]
+C:\Users\George\source\repos\SimuPro-Industrial-Suite\SimBridge\Server\Program.cs(39,35): error CS0246: The type or namespace name 'Tecnomatix' could not be found (are you missing a using directive or an assembly reference?) [C:\Users\George\source\repos\SimuPro-Industrial-Suite\SimBridge\Server\SimBridge.Server.csproj]
+
+Build FAILED.
+
+C:\Program Files\dotnet\sdk\8.0.403\Microsoft.Common.CurrentVersion.targets(2412,5): warning MSB3245: Could not resolve this reference. Could not locate the assembly "Tecnomatix.Engineering". Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors. [C:\Users\George\source\repos\SimuPro-Industrial-Suite\SimBridge\Server\SimBridge.Server.csproj]
+C:\Program Files\dotnet\sdk\8.0.403\Microsoft.Common.CurrentVersion.targets(2412,5): warning MSB3245: Could not resolve this reference. Could not locate the assembly "Tecnomatix.Engineering.Ui". Check to make sure the assembly exists on disk. If this reference is required by your code, you may get compilation errors. [C:\Users\George\source\repos\SimuPro-Industrial-Suite\SimBridge\Server\SimBridge.Server.csproj]
+C:\Users\George\source\repos\SimuPro-Industrial-Suite\SimBridge\Server\Program.cs(39,35): error CS0246: The type or namespace name 'Tecnomatix' could not be found (are you missing a using directive or an assembly reference?) [C:\Users\George\source\repos\SimuPro-Industrial-Suite\SimBridge\Server\SimBridge.Server.csproj]
+    2 Warning(s)
+    1 Error(s)
+
+Time Elapsed 00:00:00.78
+
+Workload updates are available. Run `dotnet workload list` for more information.

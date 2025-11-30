@@ -1,0 +1,65 @@
+syntax = "proto3";
+
+package simbridge;
+
+service SimBridgeService {
+  // Basic connectivity check
+  rpc Ping (Empty) returns (PingResponse);
+
+  // Simulation Control
+  rpc LoadStudy (StudyRequest) returns (StudyResponse);
+  rpc RunSimulation (SimulationRequest) returns (SimulationResponse);
+  rpc GetSimulationStatus (Empty) returns (StatusResponse);
+
+  // Signal Management
+  rpc GetSignalValues (SignalList) returns (SignalValues);
+  rpc SetSignalValues (SignalValues) returns (Empty);
+  rpc SubscribeToSignals (SignalList) returns (stream SignalValues);
+}
+
+message Empty {}
+
+message PingResponse {
+  string message = 1;
+  string server_time = 2;
+}
+
+message StudyRequest {
+  string study_path = 1;
+}
+
+message StudyResponse {
+  bool success = 1;
+  string message = 2;
+  int32 loaded_entities_count = 3;
+}
+
+message SimulationRequest {
+  enum Action {
+    START = 0;
+    STOP = 1;
+    RESET = 2;
+    STEP_FORWARD = 3;
+  }
+  Action action = 1;
+  double speed = 2;
+}
+
+message SimulationResponse {
+  bool success = 1;
+  string state = 2;
+}
+
+message StatusResponse {
+  bool is_running = 1;
+  double simulation_time = 2;
+  string current_study = 3;
+}
+
+message SignalList {
+  repeated string signal_names = 1;
+}
+
+message SignalValues {
+  map<string, string> values = 1;
+}

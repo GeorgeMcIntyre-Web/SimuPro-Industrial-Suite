@@ -1,0 +1,37 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net48</TargetFramework>
+    <RootNamespace>SimBridge.Server</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Grpc" Version="2.46.6" />
+    <PackageReference Include="Grpc.Tools" Version="2.56.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Google.Protobuf" Version="3.23.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Tecnomatix.Engineering" Condition="Exists('C:\Program Files\Tecnomatix_16.1\eMPower\Tecnomatix.Engineering.dll')">
+      <HintPath>C:\Program Files\Tecnomatix_16.1\eMPower\Tecnomatix.Engineering.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Tecnomatix.Engineering.Ui" Condition="Exists('C:\Program Files\Tecnomatix_16.1\eMPower\Tecnomatix.Engineering.Ui.dll')">
+      <HintPath>C:\Program Files\Tecnomatix_16.1\eMPower\Tecnomatix.Engineering.Ui.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+
+  <PropertyGroup Condition="!Exists('C:\Program Files\Tecnomatix_16.1\eMPower\Tecnomatix.Engineering.dll')">
+    <DefineConstants>$(DefineConstants);MOCK</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Protobuf Include="..\Protos\sim_bridge.proto" GrpcServices="Server" />
+  </ItemGroup>
+
+</Project>

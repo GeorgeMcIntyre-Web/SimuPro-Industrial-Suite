@@ -1,0 +1,2 @@
+obj\Debug\net48/SimBridge.cs \
+obj\Debug\net48/SimBridgeGrpc.cs: ../Protos/sim_bridge.proto

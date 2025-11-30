@@ -1,0 +1,5 @@
+is_global = true
+build_property.RootNamespace = SimBridge.Server
+build_property.ProjectDir = C:\Users\George\source\repos\SimuPro-Industrial-Suite\SimBridge\Server\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
